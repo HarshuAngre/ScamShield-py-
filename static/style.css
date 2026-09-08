@@ -140,3 +140,35 @@ footer {
     color: #64748b;
     margin-top: 30px;
 }
+/* Risk Levels */
+
+.risk {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 25px;
+    margin-bottom: 30px;
+}
+
+
+/* High Risk */
+
+.risk.high {
+    background: #7f1d1d;
+    color: #fecaca;
+}
+
+
+/* Suspicious */
+
+.risk.medium {
+    background: #78350f;
+    color: #fed7aa;
+}
+
+
+/* Low Risk */
+
+.risk.low {
+    background: #14532d;
+    color: #bbf7d0;
+}

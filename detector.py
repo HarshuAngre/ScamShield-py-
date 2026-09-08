@@ -163,10 +163,9 @@ def analyze_message(message):
 if __name__ == "__main__":
 
     test_message = """
-    URGENT! Congratulations! You won ₹50,000.
-    Your bank account will be blocked.
-    Click https://example.com and enter your OTP immediately.
-    """
+Your account needs KYC verification.
+Please visit the bank branch to complete the process.
+"""
 
     score, risk, reasons = analyze_message(test_message)
 

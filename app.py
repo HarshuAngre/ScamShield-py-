@@ -13,13 +13,23 @@ def home():
 
         score, risk, reasons = analyze_message(message)
 
+        if risk == "HIGH RISK":
+         risk_class = "high"
+
+        elif risk == "SUSPICIOUS":
+         risk_class = "medium"
+
+        else:
+         risk_class = "low"
+
         return render_template(
-            "index.html",
-            score=score,
-            risk=risk,
-            reasons=reasons,
-            message=message
-        )
+         "index.html",
+          score=score,
+         risk=risk,
+         risk_class=risk_class,
+         reasons=reasons,
+          message=message
+        )   
 
     return render_template("index.html")
 
