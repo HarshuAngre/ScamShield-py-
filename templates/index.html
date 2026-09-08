@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ScamShield</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <div class="logo">🛡️</div>
+
+            <h1>ScamShield</h1>
+
+            <p>Protect yourself from online scams</p>
+        </header>
+
+
+        <div class="card">
+
+            <h2>Analyze a Message</h2>
+
+            <p class="description">
+                Paste a suspicious SMS, email, or message below.
+                ScamShield will analyze it for suspicious indicators.
+            </p>
+
+            <form method="POST">
+
+                <textarea
+                    name="message"
+                    placeholder="Paste your suspicious message here..."
+                    required
+                >{{ message if message else "" }}</textarea>
+
+                <button type="submit">
+                    🔍 Analyze Message
+                </button>
+
+            </form>
+
+        </div>
+
+
+        {% if score is defined %}
+
+        <div class="result-card">
+
+            <h2>Analysis Result</h2>
+
+            <div class="score">
+                <span>{{ score }}</span>/100
+            </div>
+
+            <div class="risk">
+                {{ risk }}
+            </div>
+
+
+            <h3>Suspicious Indicators</h3>
+
+            <ul>
+                {% for reason in reasons %}
+                <li>✓ {{ reason }}</li>
+                {% endfor %}
+            </ul>
+
+
+            <div class="advice">
+
+                <strong>⚠ Safety Advice</strong>
+
+                <p>
+                    Do not click suspicious links or share
+                    passwords, OTPs, banking information,
+                    or other sensitive details.
+                </p>
+
+            </div>
+
+        </div>
+
+        {% endif %}
+
+
+        <footer>
+            ScamShield • Message Risk Analyzer
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
