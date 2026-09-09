@@ -56,12 +56,29 @@
             <h2>Analysis Result</h2>
 
             <div class="score">
-                <span>{{ score }}</span>/100
+     <span>{{ score }}</span>/100
+        </div>
+
+        <div class="risk {{ risk_class }}">
+    {{ risk }}
             </div>
 
-            <div class="risk {{ risk_class }}">
-             {{ risk }}
-        </div>
+
+            <div class="ml-result">
+
+              <h3>🤖 Machine Learning Analysis</h3>
+
+              <p>
+                Prediction:
+               <strong>{{ ml_result }}</strong>
+           </p>
+
+           <p>
+               Scam Probability:
+           <strong>{{ "%.2f"|format(ml_probability * 100) }}%</strong>
+            </p>
+
+            </div>
 
 
             <h3>Suspicious Indicators</h3>

@@ -172,3 +172,24 @@ footer {
     background: #14532d;
     color: #bbf7d0;
 }
+/* Machine Learning Result */
+
+.ml-result {
+    background: #0f172a;
+    padding: 18px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.ml-result h3 {
+    margin-bottom: 12px;
+}
+
+.ml-result p {
+    margin: 8px 0;
+    color: #cbd5e1;
+}
+
+.ml-result strong {
+    color: white;
+}
